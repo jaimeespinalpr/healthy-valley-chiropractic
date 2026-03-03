@@ -1,0 +1,31 @@
+(function () {
+        let tries = 0;
+        function initWidget() {
+            var elementRef = document.querySelector('#bf-revz-widget-9876543218815183');
+            if (!elementRef) {
+                tries++;
+                if (tries > 50) {
+                    return false;
+                }
+                setTimeout(initWidget, 500);
+                return;
+            }
+            if (elementRef.querySelector('iframe')) {
+                elementRef.innerHTML = '<iframe id="review-widget-9876543218815183" title="Customer reviews" width=280px height=192px style="border-width: 0px; ; display: block; overflow: auto; margin: 0px auto;" src=https://widgets-v7.birdeye.com/api/widgets?bid=169100639387611&wno=8&seoEnabled=false allow="payment">head><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" /></head></iframe>';
+            } else {
+                elementRef.innerHTML = '<iframe id="review-widget-9876543218815183" title="Customer reviews" width=280px height=192px style="border-width: 0px; ; display: block; overflow: auto; margin: 0px auto;" src=https://widgets-v7.birdeye.com/api/widgets?bid=169100639387611&wno=8&seoEnabled=false allow="payment">head><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" /></head></iframe>' + elementRef.innerHTML;
+            }
+            if (true) {
+                var bfDiv = document.querySelector('#bf-revz-widget-9876543218815183  .bf-dv');
+                var bfSpan = document.querySelector('#bf-revz-widget-9876543218815183  .bf-spn');
+                var bfPwr = document.querySelector('#bf-revz-widget-9876543218815183 .bf-pwr');
+                if (bfDiv && bfDiv.style) {
+                    bfDiv.style.display = "none";
+                }
+            } else {
+                elementRef.style.height = "100%";
+                elementRef.style.width = "100%";
+            }
+        }
+        initWidget();
+    })();
