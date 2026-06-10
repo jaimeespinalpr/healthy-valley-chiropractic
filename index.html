@@ -1,466 +1,465 @@
-1|<!doctype html>
-2|<html lang="en">
-3|<head>
-4|  <meta charset="utf-8">
-5|  <meta name="viewport" content="width=device-width, initial-scale=1">
-6|  <title>Healthy Valley Chiropractic | State College PA</title>
-7|  <meta name="description" content="Healthy Valley Chiropractic in State College, PA — a modern chiropractic site with family care, sports care, decompression, and patient testimonials.">
-8|  <meta property="og:type" content="website">
-9|  <meta property="og:title" content="Healthy Valley Chiropractic | State College PA">
-10|  <meta property="og:description" content="Modern, friendly chiropractic care for families, athletes, and patients looking for long-term wellness in State College, Pennsylvania.">
-11|  <meta property="og:image" content="./assets/images/official-hero.jpg">
-12|  <meta name="theme-color" content="#0f766e">
-13|  <link rel="icon" href="./assets/images/favicon-square.jpg">
-14|  <style>
-15|    :root {
-16|      --bg: #f4fbfb;
-17|      --panel: rgba(255,255,255,.84);
-18|      --panel-solid: #ffffff;
-19|      --ink: #123047;
-20|      --muted: #5b7285;
-21|      --teal: #0f766e;
-22|      --teal-2: #14b8a6;
-23|      --sky: #38bdf8;
-24|      --gold: #f59e0b;
-25|      --line: rgba(18,48,71,.10);
-26|      --shadow: 0 24px 60px rgba(15, 23, 42, .12);
-27|      --radius: 28px;
-28|      --radius-sm: 18px;
-29|      --max: 1180px;
-30|    }
-31|    * { box-sizing: border-box; }
-32|    html { scroll-behavior: smooth; }
-33|    body {
-34|      margin: 0;
-35|      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-36|      color: var(--ink);
-37|      background:
-38|        radial-gradient(circle at top left, rgba(20,184,166,.16), transparent 30%),
-39|        radial-gradient(circle at top right, rgba(56,189,248,.16), transparent 28%),
-40|        linear-gradient(180deg, #f8fefe 0%, var(--bg) 38%, #ffffff 100%);
-41|    }
-42|    a { color: inherit; text-decoration: none; }
-43|    img { display:block; width:100%; height:auto; }
-44|    .wrap { width:min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-45|    .topbar {
-46|      position: sticky; top: 0; z-index: 50;
-47|      backdrop-filter: blur(18px);
-48|      background: rgba(255,255,255,.72);
-49|      border-bottom: 1px solid rgba(255,255,255,.7);
-50|    }
-51|    .topbar-inner {
-52|      width:min(var(--max), calc(100% - 20px)); margin: 0 auto;
-53|      display:flex; align-items:center; justify-content:space-between; gap:16px;
-54|      padding: 14px 0;
-55|    }
-56|    .brand { display:flex; align-items:center; gap:14px; font-weight:800; }
-57|    .brand img { width: 52px; height: 52px; border-radius: 14px; object-fit: cover; box-shadow: 0 12px 24px rgba(15,118,110,.20); }
-58|    .brand small { display:block; color: var(--muted); font-weight: 600; }
-59|    .nav { display:flex; flex-wrap:wrap; gap: 14px; align-items:center; justify-content:flex-end; }
-60|    .nav a { color: var(--muted); font-weight: 700; font-size: .96rem; }
-61|    .nav a:hover { color: var(--teal); }
-62|    .pill {
-63|      display:inline-flex; align-items:center; gap:8px;
-64|      background: linear-gradient(135deg, var(--teal), var(--sky)); color:#fff;
-65|      padding: 10px 16px; border-radius: 999px; font-weight: 800; box-shadow: 0 16px 32px rgba(15,118,110,.28);
-66|    }
-67|    .hero { padding: 36px 0 24px; }
-68|    .hero-grid {
-69|      display:grid; grid-template-columns: 1.08fr .92fr; gap: 22px; align-items: stretch;
-70|    }
-71|    .hero-copy, .card, .panel {
-72|      background: var(--panel);
-73|      border: 1px solid rgba(255,255,255,.82);
-74|      box-shadow: var(--shadow);
-75|      border-radius: var(--radius);
-76|    }
-77|    .hero-copy { padding: 34px; overflow:hidden; position:relative; }
-78|    .hero-copy::after {
-79|      content:""; position:absolute; inset:auto -120px -120px auto; width: 260px; height:260px;
-80|      background: radial-gradient(circle, rgba(20,184,166,.20), transparent 64%); pointer-events:none;
-81|    }
-82|    .eyebrow {
-83|      display:inline-flex; gap:8px; align-items:center;
-84|      color: var(--teal); font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:.78rem;
-85|      background: rgba(20,184,166,.10); padding: 8px 12px; border-radius:999px;
-86|    }
-87|    h1 { margin: 16px 0 12px; font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: .95; letter-spacing: -.04em; }
-88|    .lead { color: var(--muted); font-size: 1.09rem; line-height: 1.75; max-width: 62ch; }
-89|    .cta-row { display:flex; flex-wrap:wrap; gap: 12px; margin: 24px 0 18px; }
-90|    .btn {
-91|      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-92|      border-radius: 999px; padding: 14px 20px; font-weight: 800; border: 1px solid transparent;
-93|      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-94|    }
-95|    .btn:hover { transform: translateY(-1px); }
-96|    .btn-primary { color:#fff; background: linear-gradient(135deg, var(--teal), var(--sky)); box-shadow: 0 18px 28px rgba(15,118,110,.24); }
-97|    .btn-secondary { background: #fff; border-color: rgba(18,48,71,.12); color: var(--ink); }
-98|    .stat-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
-99|    .stat { background: rgba(255,255,255,.78); border: 1px solid rgba(18,48,71,.08); border-radius: 20px; padding: 14px 16px; }
-100|    .stat strong { display:block; font-size: 1.2rem; margin-bottom: 4px; }
-101|    .stat span { color: var(--muted); font-size: .95rem; }
-102|    .hero-visual { display:grid; grid-template-rows: 1.08fr .92fr; gap: 14px; }
-103|    .mosaic { display:grid; grid-template-columns: 1.2fr .8fr; grid-template-rows: repeat(2, 1fr); gap: 14px; min-height: 100%; }
-104|    .shot { position:relative; overflow:hidden; border-radius: 26px; min-height: 190px; background: #cfeef3; box-shadow: var(--shadow); }
-105|    .shot img { width:100%; height:100%; object-fit: cover; }
-106|    .shot.large { grid-row: 1 / span 2; }
-107|    .shot::after {
-108|      content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(15,23,42,.02), rgba(15,23,42,.28));
-109|    }
-110|    .shot-label {
-111|      position:absolute; left: 14px; bottom: 14px; z-index:1;
-112|      background: rgba(255,255,255,.86); backdrop-filter: blur(12px);
-113|      border-radius: 999px; padding: 9px 12px; font-weight: 800; color: var(--ink); font-size: .92rem;
-114|      border: 1px solid rgba(255,255,255,.8);
-115|    }
-116|    .section { padding: 24px 0 18px; }
-117|    .section-head { display:flex; justify-content:space-between; gap:18px; align-items:end; margin-bottom: 16px; }
-118|    .section-head h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.45rem); letter-spacing:-.03em; }
-119|    .section-head p { margin:0; color: var(--muted); max-width: 62ch; line-height: 1.65; }
-120|    .grid { display:grid; gap: 16px; }
-121|    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-122|    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-123|    .card { overflow:hidden; background: rgba(255,255,255,.86); }
-124|    .card .img { aspect-ratio: 4/3; overflow:hidden; position:relative; }
-125|    .card .img img { width:100%; height:100%; object-fit: cover; transition: transform .45s ease; }
-126|    .card:hover .img img { transform: scale(1.04); }
-127|    .card .body { padding: 18px; }
-128|    .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
-129|    .card p { margin: 0; color: var(--muted); line-height: 1.65; }
-130|    .card .tag { display:inline-flex; margin-bottom: 12px; padding: 6px 10px; border-radius:999px; background: rgba(20,184,166,.10); color: var(--teal); font-weight: 800; font-size: .8rem; }
-131|    .split {
-132|      display:grid; grid-template-columns: 1.1fr .9fr; gap: 16px; align-items: stretch;
-133|    }
-134|    .panel { padding: 22px; }
-135|    .list { display:grid; gap: 12px; margin: 16px 0 0; padding: 0; list-style:none; }
-136|    .list li {
-137|      display:flex; gap: 12px; align-items:flex-start;
-138|      padding: 13px 14px; border-radius: 18px; background: rgba(255,255,255,.78);
-139|      border: 1px solid rgba(18,48,71,.08);
-140|    }
-141|    .dot { flex:0 0 auto; width: 28px; height: 28px; border-radius: 999px; display:grid; place-items:center; background: linear-gradient(135deg, var(--teal), var(--sky)); color:#fff; font-weight:900; }
-142|    .gallery {
-143|      display:grid; grid-template-columns: 1.2fr .8fr .8fr 1.2fr; gap: 12px;
-144|      grid-auto-rows: 180px;
-145|    }
-146|    .gallery figure { margin:0; border-radius: 24px; overflow:hidden; position:relative; box-shadow: var(--shadow); }
-147|    .gallery figure img { width:100%; height:100%; object-fit: cover; }
-148|    .gallery figure figcaption {
-149|      position:absolute; inset:auto 14px 14px 14px; background: rgba(255,255,255,.82); backdrop-filter: blur(12px);
-150|      border-radius: 999px; padding: 8px 12px; font-weight: 800; font-size: .92rem;
-151|    }
-152|    .testimonials { background: rgba(255,255,255,.72); border-radius: 36px; padding: 24px; border: 1px solid rgba(255,255,255,.76); box-shadow: var(--shadow); }
-153|    .testimonial-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-154|    .quote {
-155|      background: #fff; border: 1px solid rgba(18,48,71,.08); border-radius: 24px; padding: 20px;
-156|      display:flex; flex-direction:column; gap: 14px; min-height: 100%;
-157|    }
-158|    .quote p { margin:0; color: var(--ink); line-height: 1.7; font-size: 1.02rem; }
-159|    .quote .meta { display:flex; justify-content:space-between; gap:12px; align-items:center; color: var(--muted); font-weight: 700; }
-160|    .stars { color: var(--gold); letter-spacing: .12em; font-size: 1rem; }
-161|    .quote .author { color: var(--ink); }
-162|    .add-review {
-163|      display:grid; gap: 12px; align-content:start;
-164|      background: linear-gradient(180deg, rgba(15,118,110,.08), rgba(56,189,248,.09));
-165|      border: 1px solid rgba(15,118,110,.10); border-radius: 24px; padding: 20px;
-166|    }
-167|    .add-review .mini { color: var(--muted); line-height: 1.65; }
-168|    .contact-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap: 16px; align-items: start; }
-169|    .contact-box { display:grid; gap: 10px; }
-170|    .contact-item { display:flex; gap: 12px; align-items:flex-start; padding: 14px 16px; background:#fff; border-radius: 18px; border: 1px solid rgba(18,48,71,.08); }
-171|    .contact-item strong { display:block; }
-172|    iframe { width:100%; border:0; border-radius: 22px; min-height: 420px; box-shadow: var(--shadow); }
-173|    footer { padding: 18px 0 34px; color: var(--muted); }
-174|    .footer-inner { display:flex; justify-content:space-between; gap: 18px; flex-wrap: wrap; border-top: 1px solid rgba(18,48,71,.08); padding-top: 16px; }
-175|    .legacy-link { font-weight: 800; color: var(--teal); }
-176|    .muted { color: var(--muted); }
-177|    @media (max-width: 1040px) {
-178|      .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
-179|      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-180|      .gallery { grid-template-columns: repeat(2, 1fr); }
-181|      .testimonial-grid { grid-template-columns: 1fr; }
-182|      .hero-visual { grid-template-rows: auto; }
-183|      .mosaic { min-height: 520px; }
-184|    }
-185|    @media (max-width: 720px) {
-186|      .topbar-inner { flex-direction: column; align-items:flex-start; }
-187|      .nav { justify-content:flex-start; }
-188|      .hero { padding-top: 18px; }
-189|      .hero-copy { padding: 22px; }
-190|      .stat-grid, .grid-4, .grid-3, .gallery { grid-template-columns: 1fr; }
-191|      .mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(3, 180px); min-height: unset; }
-192|      .shot.large { grid-row: auto; }
-193|      .section-head { flex-direction: column; align-items:flex-start; }
-194|      iframe { min-height: 320px; }
-195|    }
-196|  </style>
-197|</head>
-198|<body>
-199|  <header class="topbar">
-200|    <div class="topbar-inner">
-201|      <a class="brand" href="#top" aria-label="Healthy Valley Chiropractic home">
-202|        <img src="./assets/images/favicon-square.jpg" alt="Healthy Valley Chiropractic logo">
-203|        <div>
-204|          Healthy Valley Chiropractic
-205|          <small>State College, PA · Since 1998</small>
-206|        </div>
-207|      </a>
-208|      <nav class="nav" aria-label="Primary navigation">
-209|        <a href="#services">Services</a>
-210|        <a href="#gallery">Gallery</a>
-211|        <a href="#testimonials">Testimonials</a>
-212|        <a href="#contact">Contact</a>
-213|        <a class="pill" href="tel:(814) 810-3395">Call (814) 810-3395</a>
-214|      </nav>
-215|    </div>
-216|  </header>
-217|
-218|  <main id="top">
-219|    <section class="hero wrap">
-220|      <div class="hero-grid">
-221|        <article class="hero-copy">
-222|          <span class="eyebrow">Modern chiropractic care for the whole family</span>
-223|          <h1>Feel better with a cleaner, friendlier Healthy Valley experience.</h1>
-224|          <p class="lead">
-225|            We rebuilt the homepage into a more modern, visual, and easy-to-scan experience — with less clutter,
-226|            more imagery, and a strong patient-story section that makes it simple to add new testimonials later.
-227|          </p>
-228|          <div class="cta-row">
-229|            <a class="btn btn-primary" href="#contact">Schedule a visit</a>
-230|            <a class="btn btn-secondary" href="#testimonials">See patient testimonials</a>
-231|          </div>
-232|          <div class="stat-grid">
-233|            <div class="stat"><strong>Since 1998</strong><span>Trusted local care for the State College area.</span></div>
-234|            <div class="stat"><strong>Family friendly</strong><span>Kids, pregnancy, sports, and wellness support.</span></div>
-235|            <div class="stat"><strong>Insurance accepted</strong><span>Simple, practical care designed for real life.</span></div>
-236|          </div>
-237|        </article>
-238|        <div class="hero-visual">
-239|          <div class="mosaic">
-240|            <figure class="shot large">
-241|              <img src="./assets/images/official-hero.jpg" alt="Dr. Jay Villella explaining chiropractic care">
-242|              <figcaption class="shot-label">Our approach: root cause + long-term wellness</figcaption>
-243|            </figure>
-244|            <figure class="shot">
-245|              <img src="./assets/images/ig-honor.jpg" alt="Healthy Valley Chiropractic community event">
-246|              <figcaption class="shot-label">Front desk and office interior</figcaption>
-247|            </figure>
-248|            <figure class="shot">
-249|              <img src="./assets/images/official-banner.png" alt="Healthy Valley Chiropractic brand banner">
-250|              <figcaption class="shot-label">Healthy Valley Chiropractic</figcaption>
-251|            </figure>
-252|          </div>
-253|        </div>
-254|      </div>
-255|    </section>
-256|
-257|    <section class="section wrap">
-258|      <div class="section-head">
-259|        <div>
-260|          <h2>What makes this version feel more modern?</h2>
-261|          <p>Shorter sections, stronger photos, clearer calls-to-action, and a dedicated reviews area that can be updated easily.</p>
-262|        </div>
-263|      </div>
-264|      <div class="grid grid-3">
-265|        <article class="card">
-266|          <div class="img"><img src="./assets/images/ig-workshop.jpg" alt="Healthy Valley Chiropractic workshop"></div>
-267|          <div class="body">
-268|            <span class="tag">Award-winning care</span>
-269|            <h3>Long-term correction, not just quick relief</h3>
-270|            <p>We highlight the clinic's focus on correcting the underlying problem and helping patients build healthier habits at home.</p>
-271|          </div>
-272|        </article>
-273|        <article class="card">
-274|          <div class="img"><img src="./assets/images/ig-water-cabinet.jpg" alt="Healthy Valley Chiropractic educational post"></div>
-275|          <div class="body">
-276|            <span class="tag">Modern services</span>
-277|            <h3>Balance, decompression, laser, sports care</h3>
-278|            <p>Visitors can scan the services quickly and jump to the detailed pages only when they want more information.</p>
-279|          </div>
-280|        </article>
-281|        <article class="card">
-282|          <div class="img"><img src="./assets/images/ig-honor.jpg" alt="Healthy Valley Chiropractic community recognition"></div>
-283|          <div class="body">
-284|            <span class="tag">Local trust</span>
-285|            <h3>Clear contact information and location</h3>
-286|            <p>The contact section keeps phone, address, and map visible without overwhelming the home page.</p>
-287|          </div>
-288|        </article>
-289|      </div>
-290|    </section>
-291|
-292|    <section id="services" class="section wrap">
-293|      <div class="section-head">
-294|        <div>
-295|          <h2>Popular services</h2>
-296|          <p>These cards keep the site approachable while still linking to the existing deep-dive pages for patients who want more detail.</p>
-297|        </div>
-298|      </div>
-299|      <div class="grid grid-4">
-300|        <a class="card" href="./www.healthyvalleychiropractic.com/chiropractic-care/index.html">
-301|          <div class="img"><img src="./doc.vortala.com/childsites/uploads/4620/files/dr-adjusting-mid-back.jpg" alt="Chiropractic care"></div>
-302|          <div class="body"><h3>Chiropractic care</h3><p>Foundational care for pain relief, mobility, and long-term wellness.</p></div>
-303|        </a>
-304|        <a class="card" href="./www.healthyvalleychiropractic.com/spinal-decompression/index.html">
-305|          <div class="img"><img src="./doc.vortala.com/childsites/uploads/4620/files/decompression-table-wide.jpg" alt="Spinal decompression"></div>
-306|          <div class="body"><h3>Spinal decompression</h3><p>A specialized option for disc-related issues and chronic back pain.</p></div>
-307|        </a>
-308|        <a class="card" href="./www.healthyvalleychiropractic.com/pediatric/index.html">
-309|          <div class="img"><img src="./doc.vortala.com/childsites/uploads/4620/files/dr-consulting-patient-2.jpg" alt="Pediatric chiropractic"></div>
-310|          <div class="body"><h3>Pediatric chiropractic</h3><p>Family-friendly care presented with a warmer, more welcoming tone.</p></div>
-311|        </a>
-312|        <a class="card" href="./www.healthyvalleychiropractic.com/sports-chiropractic/index.html">
-313|          <div class="img"><img src="./assets/images/ig-golf.jpg" alt="Sports chiropractic"></div>
-314|          <div class="body"><h3>Sports chiropractic</h3><p>Help for active patients, athletes, and recovery from repetitive strain.</p></div>
-315|        </a>
-316|        <a class="card" href="./www.healthyvalleychiropractic.com/pregnancy/index.html">
-317|          <div class="img"><img src="./assets/images/ig-wellness.jpg" alt="Pregnancy care"></div>
-318|          <div class="body"><h3>Pregnancy care</h3><p>Gentle support designed for expectant mothers and changing bodies.</p></div>
-319|        </a>
-320|        <a class="card" href="./www.healthyvalleychiropractic.com/workplace-injuries/index.html">
-321|          <div class="img"><img src="./assets/images/ig-strong-stiff.jpg" alt="Workplace injuries"></div>
-322|          <div class="body"><h3>Workplace injuries</h3><p>Practical care for everyday pain caused by work, posture, and strain.</p></div>
-323|        </a>
-324|        <a class="card" href="./www.healthyvalleychiropractic.com/auto-accident-chiropractic-care/index.html">
-325|          <div class="img"><img src="./doc.vortala.com/childsites/uploads/4620/files/dr-jay-explaining-decompression.jpg" alt="Auto accident care"></div>
-326|          <div class="body"><h3>Auto accident care</h3><p>Post-accident support for patients who need a clear next step.</p></div>
-327|        </a>
-328|        <a class="card" href="./www.healthyvalleychiropractic.com/extremity-adjusting/index.html">
-329|          <div class="img"><img src="./assets/images/ig-water-cabinet.jpg" alt="Extremity adjusting"></div>
-330|          <div class="body"><h3>Extremity adjusting</h3><p>Hands, shoulders, hips, knees, ankles, and more.</p></div>
-331|        </a>
-332|      </div>
-333|    </section>
-334|
-335|    <section class="section wrap">
-336|      <div class="split">
-337|        <div class="panel">
-338|          <div class="section-head" style="margin-bottom:10px;">
-339|            <div>
-340|              <h2>Why patients stay with Healthy Valley</h2>
-341|              <p>These are the clinic's core ideas, trimmed down into a modern, easy-to-read layout.</p>
-342|            </div>
-343|          </div>
-344|          <ul class="list">
-345|            <li><span class="dot">1</span><div><strong>Long-term wellness focus</strong><div class="muted">The site emphasizes correcting the problem at the source instead of only masking symptoms.</div></div></li>
-346|            <li><span class="dot">2</span><div><strong>Home guidance included</strong><div class="muted">Patients get support with nutrition, exercise, and at-home therapies.</div></div></li>
-347|            <li><span class="dot">3</span><div><strong>Family + athlete friendly</strong><div class="muted">The services naturally fit kids, pregnancy, active adults, and patients with chronic pain.</div></div></li>
-348|          </ul>
-349|        </div>
-350|        <div class="panel">
-351|          <div class="section-head" style="margin-bottom:10px;">
-352|            <div>
-353|              <h2>Clinic preview</h2>
-354|              <p>Two polished clinic cards keep the page lighter while staying focused only on Healthy Valley Chiropractic.</p>
-355|            </div>
-356|          </div>
-357|          <div class="grid grid-3" style="grid-template-columns: repeat(2, 1fr);">
-358|            <div class="card">
-359|              <div class="img"><img src="./assets/images/official-testimonial.jpg" alt="Healthy Valley Chiropractic patient care"></div>
-360|              <div class="body"><h3>Healthy Valley Chiropractic</h3><p>Family-focused care with a clean, modern presentation.</p></div>
-361|            </div>
-362|            <div class="card">
-363|              <div class="img"><img src="./doc.vortala.com/childsites/uploads/4620/files/staff-wide.jpg" alt="Healthy Valley Chiropractic team"></div>
-364|              <div class="body"><h3>Patient-centered care</h3><p>Supportive, practical, and built around the Healthy Valley Chiropractic experience.</p></div>
-365|            </div>
-366|          </div>
-367|        </div>
-368|      </div>
-369|    </section>
-370|
-371|    <section id="gallery" class="section wrap">
-372|      <div class="section-head">
-373|        <div>
-374|          <h2>Visual gallery</h2>
-375|          <p>More photos, less text — this section helps the home page feel premium and alive.</p>
-376|        </div>
-377|      </div>
-378|      <div class="gallery">
-379|        <figure><img src="./assets/images/ig-workshop.jpg" alt="Healthy Valley Chiropractic workshop"><figcaption>Healthy Valley Chiropractic workshop</figcaption></figure>
-380|        <figure><img src="./assets/images/ig-water-cabinet.jpg" alt="Healthy Valley Chiropractic educational post"><figcaption>Educational wellness post</figcaption></figure>
-381|        <figure><img src="./assets/images/ig-golf.jpg" alt="Healthy Valley Chiropractic sports care"><figcaption>Sports care</figcaption></figure>
-382|        <figure><img src="./assets/images/ig-honor.jpg" alt="Healthy Valley Chiropractic community recognition"><figcaption>Community recognition</figcaption></figure>
-383|      </div>
-384|    </section>
-385|
-386|    <section id="testimonials" class="section wrap">
-387|      <div class="testimonials">
-388|        <div class="section-head">
-389|          <div>
-390|            <h2>Patient testimonials</h2>
-391|            <p>These featured reviews are from the clinic's current review set. If you want to add more later, just edit <code>assets/testimonials.json</code>.</p>
-392|          </div>
-393|          <a class="pill" href="https://www.google.com/maps?cid=3781689560041324730" target="_blank" rel="noreferrer">Leave a Google review</a>
-394|        </div>
-395|        <div class="testimonial-grid">
-396|          <article class="quote">
-397|            <div class="stars" aria-hidden="true">★★★★★</div>
-398|            <p>There is no facility, gym, practice, or membership that will produce a higher return on your investment, for your health, than Healthy Valley Chiropractic and its thoughtful team.</p>
-399|            <div class="meta"><span class="author">AJ M.</span><span>Google review</span></div>
-400|          </article>
-401|          <article class="quote">
-402|            <div class="stars" aria-hidden="true">★★★★★</div>
-403|            <p>Healthy Valley Chiropractic is always on the cutting edge of technology and treatments. Not to mention the community support and of course the loyal support to the State College Marauders.</p>
-404|            <div class="meta"><span class="author">Matt S.</span><span>Google review</span></div>
-405|          </article>
-406|          <article class="quote">
-407|            <div class="stars" aria-hidden="true">★★★★★</div>
-408|            <p>Remember that kids' song, "Head, Shoulders, Knees &amp; Toes"? Over the past several months, Healthy Valley Chiropractic has helped improve them all! Listening &amp; caring team, from the front desk to all the docs. You won't be sorry you checked them out.</p>
-409|            <div class="meta"><span class="author">Pat T.</span><span>Google review</span></div>
-410|          </article>
-411|          <article class="quote">
-412|            <div class="stars" aria-hidden="true">★★★★★</div>
-413|            <p>Only good things to say about Healthy Valley Chiropractic. Their attention to their patients is impeccable. I walked in pain and all I have to say to date is they have me on the road to recovery. Awesome business!</p>
-414|            <div class="meta"><span class="author">Casca M.</span><span>Google review</span></div>
-415|          </article>
-416|          <aside class="add-review">
-417|            <div class="eyebrow" style="width:fit-content;">Easy to update later</div>
-418|            <h3 style="margin:0; font-size:1.4rem;">Add more featured testimonials</h3>
-419|            <p class="mini">This section is designed to grow. Add more patient stories in <code>assets/testimonials.json</code> and mirror them here when you want to feature them on the homepage.</p>
-420|            <a class="btn btn-primary" href="https://www.google.com/maps?cid=3781689560041324730" target="_blank" rel="noreferrer">Write a review</a>
-421|            <a class="btn btn-secondary" href="https://www.facebook.com/Healthy-Valley-Chiropractic-107107287854703" target="_blank" rel="noreferrer">Visit Facebook</a>
-422|          </aside>
-423|        </div>
-424|      </div>
-425|    </section>
-426|
-427|    <section id="contact" class="section wrap">
-428|      <div class="contact-grid">
-429|        <div class="panel contact-box">
-430|          <div class="section-head" style="margin-bottom:10px;">
-431|            <div>
-432|              <h2>Contact & location</h2>
-433|              <p>Keep the essentials visible right where visitors expect them.</p>
-434|            </div>
-435|          </div>
-436|          <div class="contact-item"><span class="dot">☎</span><div><strong>Phone</strong><div class="muted"><a href="tel:(814) 810-3395">(814) 810-3395</a></div></div></div>
-437|          <div class="contact-item"><span class="dot">📍</span><div><strong>Address</strong><div class="muted">403 South Allen Street #112A, State College, PA 16801</div></div></div>
-438|          <div class="contact-item"><span class="dot">🕒</span><div><strong>Office hours</strong><div class="muted">Mon–Thu · 8:30am–6:15pm</div></div></div>
-439|          <div class="contact-item"><span class="dot">⭐</span><div><strong>Add more testimonials later</strong><div class="muted">Edit <code>assets/testimonials.json</code> to add more featured reviews quickly.</div></div></div>
-440|          <div class="cta-row" style="margin-top:8px;">
-441|            <a class="btn btn-primary" href="./www.healthyvalleychiropractic.com/contact-us/index.html">Contact page</a>
-442|            <a class="btn btn-secondary" href="./www.healthyvalleychiropractic.com/new-patients/index.html">New patient info</a>
-443|          </div>
-444|        </div>
-445|        <iframe
-446|          title="Healthy Valley Chiropractic map"
-447|          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.120368016191!2d-77.85822257924526!3d40.79278210699225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cea9df5576504b%3A0x347b429e5d1100ba!2sHealthy%20Valley%20Chiropractic!5e0!3m2!1sen!2sus!4v1604334861160!5m2!1sen!2sus"
-448|          loading="lazy"></iframe>
-449|      </div>
-450|    </section>
-451|  </main>
-452|
-453|  <footer class="wrap">
-454|    <div class="footer-inner">
-455|      <div>
-456|        <strong>Healthy Valley Chiropractic</strong><br>
-457|        <span class="muted">State College, Pennsylvania</span>
-458|      </div>
-459|      <div>
-460|        <a class="legacy-link" href="https://www.instagram.com/healthyvalleychiropractic/" target="_blank" rel="noreferrer">View the official Instagram</a>
-461|      </div>
-462|    </div>
-463|  </footer>
-464|</body>
-465|</html>
-466|
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healthy Valley Chiropractic | State College PA</title>
+  <meta name="description" content="Healthy Valley Chiropractic in State College, PA — a modern chiropractic site with family care, sports care, decompression, and patient testimonials.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Healthy Valley Chiropractic | State College PA">
+  <meta property="og:description" content="Modern, friendly chiropractic care for families, athletes, and patients looking for long-term wellness in State College, Pennsylvania.">
+  <meta property="og:image" content="./assets/images/favicon-square.jpg">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="./assets/images/favicon-square.jpg">
+  <style>
+    :root {
+      --bg: #f4fbfb;
+      --panel: rgba(255,255,255,.84);
+      --panel-solid: #ffffff;
+      --ink: #123047;
+      --muted: #5b7285;
+      --teal: #0f766e;
+      --teal-2: #14b8a6;
+      --sky: #38bdf8;
+      --gold: #f59e0b;
+      --line: rgba(18,48,71,.10);
+      --shadow: 0 24px 60px rgba(15, 23, 42, .12);
+      --radius: 28px;
+      --radius-sm: 18px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(20,184,166,.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(56,189,248,.16), transparent 28%),
+        linear-gradient(180deg, #f8fefe 0%, var(--bg) 38%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display:block; width:100%; height:auto; }
+    .wrap { width:min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,.72);
+      border-bottom: 1px solid rgba(255,255,255,.7);
+    }
+    .topbar-inner {
+      width:min(var(--max), calc(100% - 20px)); margin: 0 auto;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding: 14px 0;
+    }
+    .brand { display:flex; align-items:center; gap:14px; font-weight:800; }
+    .brand img { width: 52px; height: 52px; border-radius: 14px; object-fit: cover; box-shadow: 0 12px 24px rgba(15,118,110,.20); }
+    .brand small { display:block; color: var(--muted); font-weight: 600; }
+    .nav { display:flex; flex-wrap:wrap; gap: 14px; align-items:center; justify-content:flex-end; }
+    .nav a { color: var(--muted); font-weight: 700; font-size: .96rem; }
+    .nav a:hover { color: var(--teal); }
+    .pill {
+      display:inline-flex; align-items:center; gap:8px;
+      background: linear-gradient(135deg, var(--teal), var(--sky)); color:#fff;
+      padding: 10px 16px; border-radius: 999px; font-weight: 800; box-shadow: 0 16px 32px rgba(15,118,110,.28);
+    }
+    .hero { padding: 36px 0 24px; }
+    .hero-grid {
+      display:grid; grid-template-columns: 1.08fr .92fr; gap: 22px; align-items: stretch;
+    }
+    .hero-copy, .card, .panel {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.82);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+    .hero-copy { padding: 34px; overflow:hidden; position:relative; }
+    .hero-copy::after {
+      content:""; position:absolute; inset:auto -120px -120px auto; width: 260px; height:260px;
+      background: radial-gradient(circle, rgba(20,184,166,.20), transparent 64%); pointer-events:none;
+    }
+    .eyebrow {
+      display:inline-flex; gap:8px; align-items:center;
+      color: var(--teal); font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:.78rem;
+      background: rgba(20,184,166,.10); padding: 8px 12px; border-radius:999px;
+    }
+    h1 { margin: 16px 0 12px; font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: .95; letter-spacing: -.04em; }
+    .lead { color: var(--muted); font-size: 1.09rem; line-height: 1.75; max-width: 62ch; }
+    .cta-row { display:flex; flex-wrap:wrap; gap: 12px; margin: 24px 0 18px; }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      border-radius: 999px; padding: 14px 20px; font-weight: 800; border: 1px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { color:#fff; background: linear-gradient(135deg, var(--teal), var(--sky)); box-shadow: 0 18px 28px rgba(15,118,110,.24); }
+    .btn-secondary { background: #fff; border-color: rgba(18,48,71,.12); color: var(--ink); }
+    .stat-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+    .stat { background: rgba(255,255,255,.78); border: 1px solid rgba(18,48,71,.08); border-radius: 20px; padding: 14px 16px; }
+    .stat strong { display:block; font-size: 1.2rem; margin-bottom: 4px; }
+    .stat span { color: var(--muted); font-size: .95rem; }
+    .hero-visual { display:grid; grid-template-rows: 1.08fr .92fr; gap: 14px; }
+    .mosaic { display:grid; grid-template-columns: 1.2fr .8fr; grid-template-rows: repeat(2, 1fr); gap: 14px; min-height: 100%; }
+    .shot { position:relative; overflow:hidden; border-radius: 26px; min-height: 190px; background: #cfeef3; box-shadow: var(--shadow); }
+    .shot img { width:100%; height:100%; object-fit: cover; }
+    .shot.large { grid-row: 1 / span 2; }
+    .shot::after {
+      content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(15,23,42,.02), rgba(15,23,42,.28));
+    }
+    .shot-label {
+      position:absolute; left: 14px; bottom: 14px; z-index:1;
+      background: rgba(255,255,255,.86); backdrop-filter: blur(12px);
+      border-radius: 999px; padding: 9px 12px; font-weight: 800; color: var(--ink); font-size: .92rem;
+      border: 1px solid rgba(255,255,255,.8);
+    }
+    .section { padding: 24px 0 18px; }
+    .section-head { display:flex; justify-content:space-between; gap:18px; align-items:end; margin-bottom: 16px; }
+    .section-head h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.45rem); letter-spacing:-.03em; }
+    .section-head p { margin:0; color: var(--muted); max-width: 62ch; line-height: 1.65; }
+    .grid { display:grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .card { overflow:hidden; background: rgba(255,255,255,.86); }
+    .card .img { aspect-ratio: 4/3; overflow:hidden; position:relative; }
+    .card .img img { width:100%; height:100%; object-fit: cover; transition: transform .45s ease; }
+    .card:hover .img img { transform: scale(1.04); }
+    .card .body { padding: 18px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.65; }
+    .card .tag { display:inline-flex; margin-bottom: 12px; padding: 6px 10px; border-radius:999px; background: rgba(20,184,166,.10); color: var(--teal); font-weight: 800; font-size: .8rem; }
+    .split {
+      display:grid; grid-template-columns: 1.1fr .9fr; gap: 16px; align-items: stretch;
+    }
+    .panel { padding: 22px; }
+    .list { display:grid; gap: 12px; margin: 16px 0 0; padding: 0; list-style:none; }
+    .list li {
+      display:flex; gap: 12px; align-items:flex-start;
+      padding: 13px 14px; border-radius: 18px; background: rgba(255,255,255,.78);
+      border: 1px solid rgba(18,48,71,.08);
+    }
+    .dot { flex:0 0 auto; width: 28px; height: 28px; border-radius: 999px; display:grid; place-items:center; background: linear-gradient(135deg, var(--teal), var(--sky)); color:#fff; font-weight:900; }
+    .gallery {
+      display:grid; grid-template-columns: 1.2fr .8fr .8fr 1.2fr; gap: 12px;
+      grid-auto-rows: 180px;
+    }
+    .gallery figure { margin:0; border-radius: 24px; overflow:hidden; position:relative; box-shadow: var(--shadow); }
+    .gallery figure img { width:100%; height:100%; object-fit: cover; }
+    .gallery figure figcaption {
+      position:absolute; inset:auto 14px 14px 14px; background: rgba(255,255,255,.82); backdrop-filter: blur(12px);
+      border-radius: 999px; padding: 8px 12px; font-weight: 800; font-size: .92rem;
+    }
+    .testimonials { background: rgba(255,255,255,.72); border-radius: 36px; padding: 24px; border: 1px solid rgba(255,255,255,.76); box-shadow: var(--shadow); }
+    .testimonial-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .quote {
+      background: #fff; border: 1px solid rgba(18,48,71,.08); border-radius: 24px; padding: 20px;
+      display:flex; flex-direction:column; gap: 14px; min-height: 100%;
+    }
+    .quote p { margin:0; color: var(--ink); line-height: 1.7; font-size: 1.02rem; }
+    .quote .meta { display:flex; justify-content:space-between; gap:12px; align-items:center; color: var(--muted); font-weight: 700; }
+    .stars { color: var(--gold); letter-spacing: .12em; font-size: 1rem; }
+    .quote .author { color: var(--ink); }
+    .add-review {
+      display:grid; gap: 12px; align-content:start;
+      background: linear-gradient(180deg, rgba(15,118,110,.08), rgba(56,189,248,.09));
+      border: 1px solid rgba(15,118,110,.10); border-radius: 24px; padding: 20px;
+    }
+    .add-review .mini { color: var(--muted); line-height: 1.65; }
+    .contact-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap: 16px; align-items: start; }
+    .contact-box { display:grid; gap: 10px; }
+    .contact-item { display:flex; gap: 12px; align-items:flex-start; padding: 14px 16px; background:#fff; border-radius: 18px; border: 1px solid rgba(18,48,71,.08); }
+    .contact-item strong { display:block; }
+    iframe { width:100%; border:0; border-radius: 22px; min-height: 420px; box-shadow: var(--shadow); }
+    footer { padding: 18px 0 34px; color: var(--muted); }
+    .footer-inner { display:flex; justify-content:space-between; gap: 18px; flex-wrap: wrap; border-top: 1px solid rgba(18,48,71,.08); padding-top: 16px; }
+    .legacy-link { font-weight: 800; color: var(--teal); }
+    .muted { color: var(--muted); }
+    @media (max-width: 1040px) {
+      .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .hero-visual { grid-template-rows: auto; }
+      .mosaic { min-height: 520px; }
+    }
+    @media (max-width: 720px) {
+      .topbar-inner { flex-direction: column; align-items:flex-start; }
+      .nav { justify-content:flex-start; }
+      .hero { padding-top: 18px; }
+      .hero-copy { padding: 22px; }
+      .stat-grid, .grid-4, .grid-3, .gallery { grid-template-columns: 1fr; }
+      .mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(3, 180px); min-height: unset; }
+      .shot.large { grid-row: auto; }
+      .section-head { flex-direction: column; align-items:flex-start; }
+      iframe { min-height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Healthy Valley Chiropractic home">
+        <img src="./assets/images/favicon-square.jpg" alt="Healthy Valley Chiropractic logo">
+        <div>
+          Healthy Valley Chiropractic
+          <small>State College, PA · Since 1998</small>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+        <a class="pill" href="tel:(814) 810-3395">Call (814) 810-3395</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <article class="hero-copy">
+          <span class="eyebrow">Modern chiropractic care for the whole family</span>
+          <h1>Feel better with a cleaner, friendlier Healthy Valley experience.</h1>
+          <p class="lead">
+            We rebuilt the homepage into a more modern, visual, and easy-to-scan experience — with less clutter,
+            more imagery, and a strong patient-story section that makes it simple to add new testimonials later.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Schedule a visit</a>
+            <a class="btn btn-secondary" href="#testimonials">See patient testimonials</a>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong>Since 1998</strong><span>Trusted local care for the State College area.</span></div>
+            <div class="stat"><strong>Family friendly</strong><span>Kids, pregnancy, sports, and wellness support.</span></div>
+            <div class="stat"><strong>Insurance accepted</strong><span>Simple, practical care designed for real life.</span></div>
+          </div>
+        </article>
+        <div class="hero-visual">
+          <div class="mosaic">
+            <figure class="shot large">
+              <img src="./assets/images/official-hero.jpg" alt="Dr. Jay Villella explaining chiropractic care">
+              <figcaption class="shot-label">Our approach: root cause + long-term wellness</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="./assets/images/official-testimonial.jpg" alt="Healthy Valley Chiropractic patient care">
+              <figcaption class="shot-label">Welcoming office</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="./assets/images/official-banner.png" alt="Healthy Valley Chiropractic brand banner">
+              <figcaption class="shot-label">Healthy Valley Chiropractic</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="section-head">
+        <div>
+          <h2>What makes this version feel more modern?</h2>
+          <p>Shorter sections, stronger photos, clearer calls-to-action, and a dedicated reviews area that can be updated easily.</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="img"><img src="./assets/images/ig-honor.jpg" alt="Award winning care image"></div>
+          <div class="body">
+            <span class="tag">Award-winning care</span>
+            <h3>Long-term correction, not just quick relief</h3>
+            <p>We highlight the clinic's focus on correcting the underlying problem and helping patients build healthier habits at home.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img"><img src="./assets/images/ig-wellness.jpg" alt="Balance training service"></div>
+          <div class="body">
+            <span class="tag">Modern services</span>
+            <h3>Balance, decompression, laser, sports care</h3>
+            <p>Visitors can scan the services quickly and jump to the detailed pages only when they want more information.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img"><img src="./assets/images/official-banner.png" alt="Practice sign outside the clinic"></div>
+          <div class="body">
+            <span class="tag">Local trust</span>
+            <h3>Clear contact information and location</h3>
+            <p>The contact section keeps phone, address, and map visible without overwhelming the home page.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="section wrap">
+      <div class="section-head">
+        <div>
+          <h2>Popular services</h2>
+          <p>These cards keep the site approachable while still linking to the existing deep-dive pages for patients who want more detail.</p>
+        </div>
+      </div>
+      <div class="grid grid-4">
+        <a class="card" href="./www.healthyvalleychiropractic.com/chiropractic-care/index.html">
+          <div class="img"><img src="./assets/images/official-hero.jpg" alt="Chiropractic care"></div>
+          <div class="body"><h3>Chiropractic care</h3><p>Foundational care for pain relief, mobility, and long-term wellness.</p></div>
+        </a>
+        <a class="card" href="./www.healthyvalleychiropractic.com/spinal-decompression/index.html">
+          <div class="img"><img src="./assets/images/ig-strong-stiff.jpg" alt="Spinal decompression"></div>
+          <div class="body"><h3>Spinal decompression</h3><p>A specialized option for disc-related issues and chronic back pain.</p></div>
+        </a>
+        <a class="card" href="./www.healthyvalleychiropractic.com/pediatric/index.html">
+          <div class="img"><img src="./assets/images/ig-wellness.jpg" alt="Pediatric chiropractic"></div>
+          <div class="body"><h3>Pediatric chiropractic</h3><p>Family-friendly care presented with a warmer, more welcoming tone.</p></div>
+        </a>
+        <a class="card" href="./www.healthyvalleychiropractic.com/sports-chiropractic/index.html">
+          <div class="img"><img src="./assets/images/ig-golf.jpg" alt="Sports chiropractic"></div>
+          <div class="body"><h3>Sports chiropractic</h3><p>Help for active patients, athletes, and recovery from repetitive strain.</p></div>
+        </a>
+        <a class="card" href="./www.healthyvalleychiropractic.com/pregnancy/index.html">
+          <div class="img"><img src="./assets/images/ig-wellness.jpg" alt="Pregnancy chiropractic"></div>
+          <div class="body"><h3>Pregnancy care</h3><p>Gentle support designed for expectant mothers and changing bodies.</p></div>
+        </a>
+        <a class="card" href="./www.healthyvalleychiropractic.com/workplace-injuries/index.html">
+          <div class="img"><img src="./assets/images/ig-water-cabinet.jpg" alt="Workplace injuries"></div>
+          <div class="body"><h3>Workplace injuries</h3><p>Practical care for everyday pain caused by work, posture, and strain.</p></div>
+        </a>
+        <a class="card" href="./www.healthyvalleychiropractic.com/auto-accident-chiropractic-care/index.html">
+          <div class="img"><img src="./assets/images/official-testimonial.jpg" alt="Auto accident chiropractic"></div>
+          <div class="body"><h3>Auto accident care</h3><p>Post-accident support for patients who need a clear next step.</p></div>
+        </a>
+        <a class="card" href="./www.healthyvalleychiropractic.com/extremity-adjusting/index.html">
+          <div class="img"><img src="./assets/images/ig-water-cabinet.jpg" alt="Extremity adjusting"></div>
+          <div class="body"><h3>Extremity adjusting</h3><p>Hands, shoulders, hips, knees, ankles, and more.</p></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="split">
+        <div class="panel">
+          <div class="section-head" style="margin-bottom:10px;">
+            <div>
+              <h2>Why patients stay with Healthy Valley</h2>
+              <p>These are the clinic's core ideas, trimmed down into a modern, easy-to-read layout.</p>
+            </div>
+          </div>
+          <ul class="list">
+            <li><span class="dot">1</span><div><strong>Long-term wellness focus</strong><div class="muted">The site emphasizes correcting the problem at the source instead of only masking symptoms.</div></div></li>
+            <li><span class="dot">2</span><div><strong>Home guidance included</strong><div class="muted">Patients get support with nutrition, exercise, and at-home therapies.</div></div></li>
+            <li><span class="dot">3</span><div><strong>Family + athlete friendly</strong><div class="muted">The services naturally fit kids, pregnancy, active adults, and patients with chronic pain.</div></div></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="section-head" style="margin-bottom:10px;">
+            <div>
+              <h2>Team preview</h2>
+              <p>Two polished team cards keep the page lighter than the current site while still showing personality.</p>
+            </div>
+          </div>
+          <div class="grid grid-3" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="card">
+              <div class="img"><img src="./assets/images/official-hero.jpg" alt="Dr. Jay Villella"></div>
+              <div class="body"><h3>Dr. Jay Villella</h3><p>Lead clinician and the face of the practice.</p></div>
+            </div>
+            <div class="card">
+              <div class="img"><img src="./assets/images/ig-honor.jpg" alt="Dr. Craig Baniszewski"></div>
+              <div class="body"><h3>Dr. Craig Baniszewski</h3><p>Additional team strength for patient-centered care.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section wrap">
+      <div class="section-head">
+        <div>
+          <h2>Visual gallery</h2>
+          <p>More photos, less text — this section helps the home page feel premium and alive.</p>
+        </div>
+      </div>
+      <div class="gallery">
+        <figure><img src="./assets/images/official-hero.jpg" alt="Clinic hero image"><figcaption>Hero slide</figcaption></figure>
+        <figure><img src="./assets/images/official-testimonial.jpg" alt="Clinic second hero image"><figcaption>Hero slide</figcaption></figure>
+        <figure><img src="./assets/images/ig-honor.jpg" alt="Our approach background"><figcaption>Our approach</figcaption></figure>
+        <figure><img src="./assets/images/ig-water-cabinet.jpg" alt="Contact us background"><figcaption>Ready to book?</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section wrap">
+      <div class="testimonials">
+        <div class="section-head">
+          <div>
+            <h2>Patient testimonials</h2>
+            <p>These featured reviews are from the clinic's current review set. If you want to add more later, just edit <code>assets/testimonials.json</code>.</p>
+          </div>
+          <a class="pill" href="https://www.google.com/maps?cid=3781689560041324730" target="_blank" rel="noreferrer">Leave a Google review</a>
+        </div>
+        <div class="testimonial-grid">
+          <article class="quote">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>There is no facility, gym, practice, or membership that will produce a higher return on your investment, for your health, than Dr. Jay and his thoughtful team.</p>
+            <div class="meta"><span class="author">AJ M.</span><span>Google review</span></div>
+          </article>
+          <article class="quote">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>Healthy Valley Chiropractic is always on the cutting edge of technology and treatments. Not to mention the community support and of course the loyal support to the State College Marauders.</p>
+            <div class="meta"><span class="author">Matt S.</span><span>Google review</span></div>
+          </article>
+          <article class="quote">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>Remember that kids' song, "Head, Shoulders, Knees &amp; Toes"? Over the past several months, Healthy Valley Chiropractic has helped improve them all! Listening &amp; caring team, from the front desk to all the docs. You won't be sorry you checked them out.</p>
+            <div class="meta"><span class="author">Pat T.</span><span>Google review</span></div>
+          </article>
+          <article class="quote">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>Only good things to say about Healthy Valley Chiropractic. Their attention to their patients is impeccable. I walked in pain and all I have to say to date is they have me on the road to recovery. Awesome business!</p>
+            <div class="meta"><span class="author">Casca M.</span><span>Google review</span></div>
+          </article>
+          <aside class="add-review">
+            <div class="eyebrow" style="width:fit-content;">Easy to update later</div>
+            <h3 style="margin:0; font-size:1.4rem;">Add more featured testimonials</h3>
+            <p class="mini">This section is designed to grow. Add more patient stories in <code>assets/testimonials.json</code> and mirror them here when you want to feature them on the homepage.</p>
+            <a class="btn btn-primary" href="https://www.google.com/maps?cid=3781689560041324730" target="_blank" rel="noreferrer">Write a review</a>
+            <a class="btn btn-secondary" href="https://www.facebook.com/Healthy-Valley-Chiropractic-107107287854703" target="_blank" rel="noreferrer">Visit Facebook</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section wrap">
+      <div class="contact-grid">
+        <div class="panel contact-box">
+          <div class="section-head" style="margin-bottom:10px;">
+            <div>
+              <h2>Contact & location</h2>
+              <p>Keep the essentials visible right where visitors expect them.</p>
+            </div>
+          </div>
+          <div class="contact-item"><span class="dot">☎</span><div><strong>Phone</strong><div class="muted"><a href="tel:(814) 810-3395">(814) 810-3395</a></div></div></div>
+          <div class="contact-item"><span class="dot">📍</span><div><strong>Address</strong><div class="muted">403 South Allen Street #112A, State College, PA 16801</div></div></div>
+          <div class="contact-item"><span class="dot">🕒</span><div><strong>Office hours</strong><div class="muted">Mon–Thu · 8:30am–6:15pm</div></div></div>
+          <div class="contact-item"><span class="dot">⭐</span><div><strong>Add more testimonials later</strong><div class="muted">Edit <code>assets/testimonials.json</code> to add more featured reviews quickly.</div></div></div>
+          <div class="cta-row" style="margin-top:8px;">
+            <a class="btn btn-primary" href="./www.healthyvalleychiropractic.com/contact-us/index.html">Contact page</a>
+            <a class="btn btn-secondary" href="./www.healthyvalleychiropractic.com/new-patients/index.html">New patient info</a>
+          </div>
+        </div>
+        <iframe
+          title="Healthy Valley Chiropractic map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.120368016191!2d-77.85822257924526!3d40.79278210699225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cea9df5576504b%3A0x347b429e5d1100ba!2sHealthy%20Valley%20Chiropractic!5e0!3m2!1sen!2sus!4v1604334861160!5m2!1sen!2sus"
+          loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-inner">
+      <div>
+        <strong>Healthy Valley Chiropractic</strong><br>
+        <span class="muted">State College, Pennsylvania</span>
+      </div>
+      <div>
+        <a class="legacy-link" href="./www.healthyvalleychiropractic.com/index.html">View the mirrored legacy site</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
